@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9E5848B1D6F79BB00B88ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5848A1D6F79BB00B88ADB /* AppDelegate.swift */; };
+		A9E5848D1D6F79BB00B88ADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5848C1D6F79BB00B88ADB /* ViewController.swift */; };
+		A9E584901D6F79BB00B88ADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E5848E1D6F79BB00B88ADB /* Main.storyboard */; };
+		A9E584921D6F79BB00B88ADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E584911D6F79BB00B88ADB /* Assets.xcassets */; };
+		A9E584951D6F79BB00B88ADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E584931D6F79BB00B88ADB /* LaunchScreen.storyboard */; };
+		A9E5849D1D6F7AE700B88ADB /* WODTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5849C1D6F7AE700B88ADB /* WODTableViewController.swift */; };
+		A9E5849F1D6F7C2A00B88ADB /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5849E1D6F7C2A00B88ADB /* Exercise.swift */; };
+		A9E584A11D70752300B88ADB /* WorkoutPatternTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584A01D70752300B88ADB /* WorkoutPatternTracker.swift */; };
+		A9E584A31D70755200B88ADB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584A21D70755200B88ADB /* Workout.swift */; };
+		A9E584A51D7075CA00B88ADB /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584A41D7075CA00B88ADB /* Modality.swift */; };
+		A9E584A71D7076CC00B88ADB /* WorkoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584A61D7076CC00B88ADB /* WorkoutFactory.swift */; };
+		A9E584AB1D70B84D00B88ADB /* CycleOfThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584AA1D70B84D00B88ADB /* CycleOfThree.swift */; };
+		A9E584AF1D71269400B88ADB /* WorkoutTemplateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584AE1D71269400B88ADB /* WorkoutTemplateEnum.swift */; };
+		A9E584B11D720ED000B88ADB /* WorkoutTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584B01D720ED000B88ADB /* WorkoutTemplate.swift */; };
+		A9E584B51D74BF1B00B88ADB /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584B41D74BF1B00B88ADB /* Equipment.swift */; };
+		A9E584B71D74BF6B00B88ADB /* MovementPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584B61D74BF6B00B88ADB /* MovementPattern.swift */; };
+		A9E584B91D75B6D400B88ADB /* ExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E584B81D75B6D400B88ADB /* ExerciseController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9E584871D6F79BB00B88ADB /* WODPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WODPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9E5848A1D6F79BB00B88ADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WODPerfect/AppDelegate.swift; sourceTree = "<group>"; };
+		A9E5848C1D6F79BB00B88ADB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A9E5848F1D6F79BB00B88ADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9E584911D6F79BB00B88ADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9E584941D6F79BB00B88ADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A9E584961D6F79BB00B88ADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9E5849C1D6F7AE700B88ADB /* WODTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WODTableViewController.swift; sourceTree = "<group>"; };
+		A9E5849E1D6F7C2A00B88ADB /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		A9E584A01D70752300B88ADB /* WorkoutPatternTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutPatternTracker.swift; sourceTree = "<group>"; };
+		A9E584A21D70755200B88ADB /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		A9E584A41D7075CA00B88ADB /* Modality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
+		A9E584A61D7076CC00B88ADB /* WorkoutFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutFactory.swift; sourceTree = "<group>"; };
+		A9E584AA1D70B84D00B88ADB /* CycleOfThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleOfThree.swift; sourceTree = "<group>"; };
+		A9E584AE1D71269400B88ADB /* WorkoutTemplateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutTemplateEnum.swift; path = ../WorkoutTemplateEnum.swift; sourceTree = "<group>"; };
+		A9E584B01D720ED000B88ADB /* WorkoutTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutTemplate.swift; path = ../WorkoutTemplate.swift; sourceTree = "<group>"; };
+		A9E584B41D74BF1B00B88ADB /* Equipment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		A9E584B61D74BF6B00B88ADB /* MovementPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementPattern.swift; sourceTree = "<group>"; };
+		A9E584B81D75B6D400B88ADB /* ExerciseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9E584841D6F79BB00B88ADB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9E5847E1D6F79BB00B88ADB = {
+			isa = PBXGroup;
+			children = (
+				A9E5848A1D6F79BB00B88ADB /* AppDelegate.swift */,
+				A9E584891D6F79BB00B88ADB /* WODPerfect */,
+				A9E584881D6F79BB00B88ADB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9E584881D6F79BB00B88ADB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9E584871D6F79BB00B88ADB /* WODPerfect.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9E584891D6F79BB00B88ADB /* WODPerfect */ = {
+			isa = PBXGroup;
+			children = (
+				A9E584B21D725A9E00B88ADB /* Enums */,
+				A9E584B31D725AB700B88ADB /* UI */,
+				A9E5849E1D6F7C2A00B88ADB /* Exercise.swift */,
+				A9E584B41D74BF1B00B88ADB /* Equipment.swift */,
+				A9E584A61D7076CC00B88ADB /* WorkoutFactory.swift */,
+				A9E584A01D70752300B88ADB /* WorkoutPatternTracker.swift */,
+				A9E584B01D720ED000B88ADB /* WorkoutTemplate.swift */,
+				A9E584A21D70755200B88ADB /* Workout.swift */,
+				A9E584911D6F79BB00B88ADB /* Assets.xcassets */,
+				A9E584961D6F79BB00B88ADB /* Info.plist */,
+			);
+			path = WODPerfect;
+			sourceTree = "<group>";
+		};
+		A9E584B21D725A9E00B88ADB /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A9E584A41D7075CA00B88ADB /* Modality.swift */,
+				A9E584B81D75B6D400B88ADB /* ExerciseController.swift */,
+				A9E584AA1D70B84D00B88ADB /* CycleOfThree.swift */,
+				A9E584AE1D71269400B88ADB /* WorkoutTemplateEnum.swift */,
+				A9E584B61D74BF6B00B88ADB /* MovementPattern.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		A9E584B31D725AB700B88ADB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A9E584931D6F79BB00B88ADB /* LaunchScreen.storyboard */,
+				A9E5848E1D6F79BB00B88ADB /* Main.storyboard */,
+				A9E5848C1D6F79BB00B88ADB /* ViewController.swift */,
+				A9E5849C1D6F7AE700B88ADB /* WODTableViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9E584861D6F79BB00B88ADB /* WODPerfect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9E584991D6F79BB00B88ADB /* Build configuration list for PBXNativeTarget "WODPerfect" */;
+			buildPhases = (
+				A9E584831D6F79BB00B88ADB /* Sources */,
+				A9E584841D6F79BB00B88ADB /* Frameworks */,
+				A9E584851D6F79BB00B88ADB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WODPerfect;
+			productName = WODPerfect;
+			productReference = A9E584871D6F79BB00B88ADB /* WODPerfect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9E5847F1D6F79BB00B88ADB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "James Pacheco";
+				TargetAttributes = {
+					A9E584861D6F79BB00B88ADB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A9E584821D6F79BB00B88ADB /* Build configuration list for PBXProject "WODPerfect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9E5847E1D6F79BB00B88ADB;
+			productRefGroup = A9E584881D6F79BB00B88ADB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9E584861D6F79BB00B88ADB /* WODPerfect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9E584851D6F79BB00B88ADB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9E584951D6F79BB00B88ADB /* LaunchScreen.storyboard in Resources */,
+				A9E584921D6F79BB00B88ADB /* Assets.xcassets in Resources */,
+				A9E584901D6F79BB00B88ADB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9E584831D6F79BB00B88ADB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9E5848D1D6F79BB00B88ADB /* ViewController.swift in Sources */,
+				A9E584B71D74BF6B00B88ADB /* MovementPattern.swift in Sources */,
+				A9E584AF1D71269400B88ADB /* WorkoutTemplateEnum.swift in Sources */,
+				A9E584B51D74BF1B00B88ADB /* Equipment.swift in Sources */,
+				A9E5849F1D6F7C2A00B88ADB /* Exercise.swift in Sources */,
+				A9E584B91D75B6D400B88ADB /* ExerciseController.swift in Sources */,
+				A9E584B11D720ED000B88ADB /* WorkoutTemplate.swift in Sources */,
+				A9E5849D1D6F7AE700B88ADB /* WODTableViewController.swift in Sources */,
+				A9E584A11D70752300B88ADB /* WorkoutPatternTracker.swift in Sources */,
+				A9E5848B1D6F79BB00B88ADB /* AppDelegate.swift in Sources */,
+				A9E584A51D7075CA00B88ADB /* Modality.swift in Sources */,
+				A9E584A31D70755200B88ADB /* Workout.swift in Sources */,
+				A9E584AB1D70B84D00B88ADB /* CycleOfThree.swift in Sources */,
+				A9E584A71D7076CC00B88ADB /* WorkoutFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A9E5848E1D6F79BB00B88ADB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9E5848F1D6F79BB00B88ADB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A9E584931D6F79BB00B88ADB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9E584941D6F79BB00B88ADB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9E584971D6F79BB00B88ADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9E584981D6F79BB00B88ADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9E5849A1D6F79BB00B88ADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WODPerfect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamespacheco.WODPerfect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9E5849B1D6F79BB00B88ADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WODPerfect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamespacheco.WODPerfect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9E584821D6F79BB00B88ADB /* Build configuration list for PBXProject "WODPerfect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E584971D6F79BB00B88ADB /* Debug */,
+				A9E584981D6F79BB00B88ADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9E584991D6F79BB00B88ADB /* Build configuration list for PBXNativeTarget "WODPerfect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E5849A1D6F79BB00B88ADB /* Debug */,
+				A9E5849B1D6F79BB00B88ADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9E5847F1D6F79BB00B88ADB /* Project object */;
+}
