@@ -65,8 +65,33 @@ class WorkoutFactory {
     
     private func createWorkout(workoutTemplate: WorkoutTemplate, modalities: [Modality]) -> Workout {
         let numberOfExercises = workoutTemplate.generateRandomNumberOfMovements()
-        let exercises = WorkoutPatternTracker.sharedInstance.generateExercisesForModalities(modalities, numberOfMovements: numberOfExercises)
+        let exercisesPerModality = determineNumberOfExercisesPerModality(modalities, numberOfMovements: numberOfExercises)
+        let exercises = ExerciseFactory.getExercises(exerciseModalityDictionary: exercisesPerModality)
         return Workout(exercises: exercises)
+    }
+    
+    private func determineNumberOfExercisesPerModality(modalities: [Modality], numberOfMovements: Int) -> [Modality: Int] {
+        var remainingNumberOfModalities = modalities.count
+        var remainingNumberOfMovements = numberOfMovements
+        var modalityExerciseDictionary: [Modality: Int] = [:]
+        let containsConditioning = modalities.contains(.Conditioning)
+        
+        if containsConditioning && remainingNumberOfModalities > 1 {
+            let movementRemainder = remainingNumberOfMovements % remainingNumberOfModalities
+            var numberOfConditioningMovements = ((movementRemainder + remainingNumberOfMovements)/remainingNumberOfModalities) - movementRemainder
+            numberOfConditioningMovements = min(numberOfConditioningMovements, 3)
+            modalityExerciseDictionary[.Conditioning] = numberOfConditioningMovements
+            remainingNumberOfMovements -= numberOfConditioningMovements
+            remainingNumberOfModalities -= 1
+        }
+        
+        for modality in modalities {
+            if containsConditioning && modality == .Conditioning {
+                continue
+            }
+            modalityExerciseDictionary[modality] = remainingNumberOfMovements/remainingNumberOfModalities
+        }
+        return modalityExerciseDictionary
     }
     
 }

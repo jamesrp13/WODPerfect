@@ -18,9 +18,9 @@ class WorkoutPatternTracker {
     
     private var currentCycle: CycleOfThree = .First
     
-    private var RemainingCardioExercises: [Exercise] = []
-    private var RemainingGymnasticsExercises: [Exercise] = []
-    private var RemainingWeightliftingExercises: [Exercise] = []
+    private var remainingCardioExercises: [Exercise] = []
+    private var remainingGymnasticsExercises: [Exercise] = []
+    private var remainingWeightliftingExercises: [Exercise] = []
     
     private var currentModalities: [Modality] {
         switch (currentDay.rawValue, currentCycle.rawValue) {
@@ -110,26 +110,31 @@ class WorkoutPatternTracker {
         
         var exercises: [Exercise] = []
         for _ in 1...numberOfMovements {
-            exercises.append(getRandomExerciseForModality(modality))
+            if let exercise = getRandomExerciseForModality(modality) {
+                exercises.append(exercise)
+            }
         }
         return exercises
     }
     
-    private func getRandomExerciseForModality(modality: Modality) -> Exercise {
+    private func getRandomExerciseForModality(modality: Modality) -> Exercise? {
         var exercises: [Exercise] = []
         switch modality {
         case .Conditioning:
-            exercises = RemainingCardioExercises
+            exercises = remainingCardioExercises
         case .Gymnastics:
-            exercises = RemainingGymnasticsExercises
+            exercises = remainingGymnasticsExercises
         case .Weightlifting:
-            exercises = RemainingWeightliftingExercises
+            exercises = remainingWeightliftingExercises
         }
         let exercisesCount = exercises.count
-        let randomNum = Int(arc4random_uniform(UInt32(exercisesCount)))
-        let exercise = exercises[randomNum]
-        updateMovementsDictionaryForExercise(exercise)
-        return exercise
+        if exercisesCount > 0 {
+            let randomNum = Int(arc4random_uniform(UInt32(exercisesCount)))
+            let exercise = exercises[randomNum]
+            updateMovementsDictionaryForExercise(exercise)
+            return exercise
+        }
+        return nil
     }
     
     private func updateMovementsDictionaryForExercise(exercise: Exercise) {
@@ -153,7 +158,7 @@ class WorkoutPatternTracker {
                 }
             }
         }
-
+        
         guard let secondaryMovement = secondaryMovement else {return}
         if usedMovementsDictionary[secondaryMovement] ?? 0 <= 1 {
             normalization = 1
@@ -170,12 +175,6 @@ class WorkoutPatternTracker {
                 }
             }
         }
-    }
-    
-    private func isMovementPatternAvailableForModality(modality: Modality) -> Bool {
-        
-        //TODO fill out
-        return true
     }
     
 }

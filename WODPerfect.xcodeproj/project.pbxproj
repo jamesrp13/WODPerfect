@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90AA8FF1D95CBC0005E492C /* ExerciseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90AA8FE1D95CBC0005E492C /* ExerciseFactory.swift */; };
 		A9E5848B1D6F79BB00B88ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5848A1D6F79BB00B88ADB /* AppDelegate.swift */; };
 		A9E5848D1D6F79BB00B88ADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5848C1D6F79BB00B88ADB /* ViewController.swift */; };
 		A9E584901D6F79BB00B88ADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E5848E1D6F79BB00B88ADB /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A90AA8FE1D95CBC0005E492C /* ExerciseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseFactory.swift; sourceTree = "<group>"; };
 		A9E584871D6F79BB00B88ADB /* WODPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WODPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E5848A1D6F79BB00B88ADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WODPerfect/AppDelegate.swift; sourceTree = "<group>"; };
 		A9E5848C1D6F79BB00B88ADB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				A9E584B31D725AB700B88ADB /* UI */,
 				A9E5849E1D6F7C2A00B88ADB /* Exercise.swift */,
 				A9E584B41D74BF1B00B88ADB /* Equipment.swift */,
+				A90AA8FE1D95CBC0005E492C /* ExerciseFactory.swift */,
 				A9E584A61D7076CC00B88ADB /* WorkoutFactory.swift */,
 				A9E584A01D70752300B88ADB /* WorkoutPatternTracker.swift */,
 				A9E584B01D720ED000B88ADB /* WorkoutTemplate.swift */,
@@ -148,6 +151,8 @@
 				TargetAttributes = {
 					A9E584861D6F79BB00B88ADB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2HKCZL2J7X;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -198,6 +203,7 @@
 				A9E584A11D70752300B88ADB /* WorkoutPatternTracker.swift in Sources */,
 				A9E5848B1D6F79BB00B88ADB /* AppDelegate.swift in Sources */,
 				A9E584A51D7075CA00B88ADB /* Modality.swift in Sources */,
+				A90AA8FF1D95CBC0005E492C /* ExerciseFactory.swift in Sources */,
 				A9E584A31D70755200B88ADB /* Workout.swift in Sources */,
 				A9E584AB1D70B84D00B88ADB /* CycleOfThree.swift in Sources */,
 				A9E584A71D7076CC00B88ADB /* WorkoutFactory.swift in Sources */,
@@ -315,10 +321,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HKCZL2J7X;
 				INFOPLIST_FILE = WODPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamespacheco.WODPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -326,10 +334,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HKCZL2J7X;
 				INFOPLIST_FILE = WODPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamespacheco.WODPerfect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -352,6 +362,7 @@
 				A9E5849B1D6F79BB00B88ADB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
