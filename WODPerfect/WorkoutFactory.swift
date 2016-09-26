@@ -16,7 +16,9 @@ class WorkoutFactory {
         let currentDay = details.currentDay
         let currentCycle = details.currentCycle
         let template = generateWorkoutTemplate(modalities, currentDay: currentDay, currentCycle: currentCycle)
-        return createWorkout(template, modalities: modalities)
+        let workout = createWorkout(template, modalities: modalities)
+        WorkoutPatternTracker.sharedInstance.updateTrackerForWorkout(workout)
+        return workout
     }
     
     private func generateWorkoutTemplate(modalities: [Modality], currentDay: CycleOfThree, currentCycle: CycleOfThree) -> WorkoutTemplate {
@@ -39,7 +41,7 @@ class WorkoutFactory {
                 return [.Weightlifting]
             }
         } else if numberOfModalities == 2 {
-            return [.Chipper, .Couplet, .Couplet, .Couplet, .Triplet, .Sandwich]
+            return [.Chipper, .Couplet, .Couplet, .Couplet, .Couplet, .Triplet, .Sandwich]
         }
         return [.Chipper, .Triplet, .Sandwich]
     }
@@ -66,8 +68,21 @@ class WorkoutFactory {
     private func createWorkout(workoutTemplate: WorkoutTemplate, modalities: [Modality]) -> Workout {
         let numberOfExercises = workoutTemplate.generateRandomNumberOfMovements()
         let exercisesPerModality = determineNumberOfExercisesPerModality(modalities, numberOfMovements: numberOfExercises)
-        let exercises = ExerciseFactory.getExercises(exerciseModalityDictionary: exercisesPerModality)
+        let exercises = getExercisesForModalities(exercisesPerModality)
         return Workout(exercises: exercises)
+    }
+    
+    private func getExercisesForModalities(exercisesPerModality: [Modality: Int]) -> [Exercise] {
+        var exercises: [Exercise] = []
+        for (modality, numberOfExercises) in exercisesPerModality {
+            for _ in 1...numberOfExercises {
+                let movementPattern = WorkoutPatternTracker.sharedInstance.getMovementPattern(modality)
+                let exercise = ExerciseFactory.getExercise(modality, movementPattern: movementPattern, excluding: exercises)
+                WorkoutPatternTracker.sharedInstance.updateMovementsDictionaryForExercise(exercise)
+                exercises.append(exercise)
+            }
+        }
+        return exercises
     }
     
     private func determineNumberOfExercisesPerModality(modalities: [Modality], numberOfMovements: Int) -> [Modality: Int] {
@@ -76,7 +91,7 @@ class WorkoutFactory {
         var modalityExerciseDictionary: [Modality: Int] = [:]
         let containsConditioning = modalities.contains(.Conditioning)
         
-        if containsConditioning && remainingNumberOfModalities > 1 {
+        if containsConditioning {
             let movementRemainder = remainingNumberOfMovements % remainingNumberOfModalities
             var numberOfConditioningMovements = ((movementRemainder + remainingNumberOfMovements)/remainingNumberOfModalities) - movementRemainder
             numberOfConditioningMovements = min(numberOfConditioningMovements, 3)

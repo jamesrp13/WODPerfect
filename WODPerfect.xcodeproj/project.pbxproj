@@ -87,6 +87,7 @@
 				A9E584B41D74BF1B00B88ADB /* Equipment.swift */,
 				A90AA8FE1D95CBC0005E492C /* ExerciseFactory.swift */,
 				A9E584A61D7076CC00B88ADB /* WorkoutFactory.swift */,
+				A9E584B81D75B6D400B88ADB /* ExerciseController.swift */,
 				A9E584A01D70752300B88ADB /* WorkoutPatternTracker.swift */,
 				A9E584B01D720ED000B88ADB /* WorkoutTemplate.swift */,
 				A9E584A21D70755200B88ADB /* Workout.swift */,
@@ -100,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				A9E584A41D7075CA00B88ADB /* Modality.swift */,
-				A9E584B81D75B6D400B88ADB /* ExerciseController.swift */,
 				A9E584AA1D70B84D00B88ADB /* CycleOfThree.swift */,
 				A9E584AE1D71269400B88ADB /* WorkoutTemplateEnum.swift */,
 				A9E584B61D74BF6B00B88ADB /* MovementPattern.swift */,

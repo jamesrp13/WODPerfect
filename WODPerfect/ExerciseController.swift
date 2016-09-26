@@ -9,5 +9,5 @@
 import Foundation
 
 class ExerciseController {
-    
+    static let exercises: [Exercise] = []
 }

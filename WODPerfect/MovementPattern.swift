@@ -14,4 +14,5 @@ enum MovementPattern {
     case Core
     case LowerBodyPush
     case LowerBodyPull
+    case Lungs
 }

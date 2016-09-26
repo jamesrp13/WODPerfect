@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Exercise {
+class Exercise: Equatable {
     
     let name: String
     
@@ -18,11 +18,11 @@ class Exercise {
     
     let requiredEquipment: [Equipment]
     
-    let primaryMovementPattern: MovementPattern?
+    let primaryMovementPattern: MovementPattern
     
     let secondaryMovementPattern: MovementPattern?
     
-    init(name: String, averageRepsPerMinute: Int, modality: Modality, requiredEquipment: [Equipment], primaryMovementPattern: MovementPattern?, secondaryMovementPattern: MovementPattern?) {
+    init(name: String, averageRepsPerMinute: Int, modality: Modality, requiredEquipment: [Equipment], primaryMovementPattern: MovementPattern, secondaryMovementPattern: MovementPattern?) {
         self.name = name
         self.averageRepsPerMinute = averageRepsPerMinute
         self.modality = modality
@@ -31,5 +31,9 @@ class Exercise {
         self.secondaryMovementPattern = secondaryMovementPattern
     }
     
+}
+
+func ==(lhs: Exercise, rhs: Exercise) -> Bool {
+    return lhs.name == rhs.name
 }
 

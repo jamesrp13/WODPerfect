@@ -15,17 +15,17 @@ protocol WorkoutTemplate {
     var maxNumberOfRounds: Int {get}
     var minNumberOfRounds: Int {get}
     var averageNumberOfRounds: Int {get}
-    var maxTimeTarget: Int {get}
-    var minTimeTarget: Int {get}
-    var averageTimeTarget: Int {get}
+//    var maxTimeTarget: Int {get}
+//    var minTimeTarget: Int {get}
+//    var averageTimeTarget: Int {get}
     
     func generateRandomNumberOfMovements() -> Int
     
     func generateRandomNumberOfRounds() -> Int
     
-    func generateTimeTarget() -> Int
+//    func generateTimeTarget() -> Int
     
-    func generateWorkout(exercises: [Exercise]) -> Workout
+//    func generateWorkout(exercises: [Exercise]) -> Workout
 }
 
 extension WorkoutTemplate {
@@ -37,13 +37,13 @@ extension WorkoutTemplate {
         return generateRandomNumberBetween(minNumberOfRounds, high: maxNumberOfRounds)
     }
     
-    func generateTimeTarget() -> Int {
-        return generateRandomNumberBetween(minTimeTarget, high: maxTimeTarget)
-    }
+//    func generateTimeTarget() -> Int {
+//        return generateRandomNumberBetween(minTimeTarget, high: maxTimeTarget)
+//    }
     
     private func generateRandomNumberBetween(low: Int, high: Int) -> Int {
         let possibilities = high - low + 1
-        let randomSelection = Int(arc4random_uniform(UInt32(possibilities))) + 1 + low
+        let randomSelection = Int(arc4random_uniform(UInt32(possibilities))) + low
         return randomSelection
     }
 }

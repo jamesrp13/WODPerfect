@@ -46,10 +46,44 @@ class WorkoutPatternTracker {
         .UpperBodyPull: 1,
         .Core: 1,
         .LowerBodyPush: 1,
-        .LowerBodyPull: 1
+        .LowerBodyPull: 1,
+        .Lungs: 1
     ]
     
-    func updateCurrentDayAndCycle() {
+    func getWorkoutDetails() -> (modalities: [Modality], currentDay: CycleOfThree, currentCycle: CycleOfThree) {
+        let returnValue = (currentModalities, currentDay, currentCycle)
+        return returnValue
+    }
+    
+    func getMovementPattern(modality: Modality) -> MovementPattern {
+        let availableMovementPatterns: [MovementPattern] = getAvailableMovementPatterns(modality)
+        let movementPatternScores: [Int] = availableMovementPatterns.map {usedMovementsDictionary[$0] ?? 1}
+        let minScore = movementPatternScores.minElement() ?? 1
+        var leastUsedMovementPatterns: [MovementPattern] = []
+        for (index, pattern) in availableMovementPatterns.enumerate() {
+            if movementPatternScores[index] == minScore {
+                leastUsedMovementPatterns.append(pattern)
+            }
+        }
+        let random = Int(arc4random_uniform(UInt32(leastUsedMovementPatterns.count)))
+        return leastUsedMovementPatterns[random]
+    }
+    
+    private func getAvailableMovementPatterns(modality: Modality) -> [MovementPattern] {
+        var movementPatterns: Set<MovementPattern> = Set()
+        for exercise in ExerciseController.exercises {
+            if exercise.modality == modality {
+                movementPatterns.insert(exercise.primaryMovementPattern)
+            }
+        }
+        return Array(movementPatterns)
+    }
+    
+    func updateTrackerForWorkout(workout: Workout) {
+        updateCurrentDayAndCycle()
+    }
+    
+    private func updateCurrentDayAndCycle() {
         let newCurrentDayInt = currentDay.rawValue >= 2 ? 0:currentDay.rawValue + 1
         var newCurrentCycleInt = currentCycle.rawValue
         if currentDay.rawValue >= 2 {
@@ -60,86 +94,8 @@ class WorkoutPatternTracker {
         currentCycle = CycleOfThree(rawValue: newCurrentCycleInt) ?? .First
     }
     
-    func getWorkoutDetails() -> (modalities: [Modality], currentDay: CycleOfThree, currentCycle: CycleOfThree) {
-        let returnValue = (currentModalities, currentDay, currentCycle)
-        updateCurrentDayAndCycle()
-        return returnValue
-    }
-    
-    func generateExercisesForModalities(modalities: [Modality], numberOfMovements: Int) -> [Exercise] {
-        var exercises: [Exercise] = []
-        for modality in modalities.sort({$0.rawValue < $1.rawValue}) {
-            switch modality {
-            case .Conditioning:
-                if modalities.count == 1 {
-                    return generateExercisesForModality(modality, numberOfMovements: numberOfMovements)
-                } else if numberOfMovements > 5 {
-                    let oneOrTwo = Int(arc4random_uniform(UInt32(2))) + 1
-                    exercises += generateExercisesForModality(modality, numberOfMovements: oneOrTwo)
-                } else {
-                    exercises += generateExercisesForModality(modality, numberOfMovements: 1)
-                }
-            case .Gymnastics:
-                if modalities.count == 1 {
-                    return generateExercisesForModality(modality, numberOfMovements: numberOfMovements)
-                } else if modalities.count == 2 && exercises.count == 0 {
-                    var numberOfExercises = (numberOfMovements - exercises.count)/2
-                    if numberOfExercises % 2 != 0 {
-                        let zeroOrOne = Int(arc4random_uniform(UInt32(2)))
-                        numberOfExercises += zeroOrOne
-                    }
-                    exercises += generateExercisesForModality(modality, numberOfMovements: numberOfExercises)
-                }
-            case .Weightlifting:
-                return generateExercisesForModality(modality, numberOfMovements: numberOfMovements - exercises.count)
-            }
-        }
-        return exercises
-    }
-    
-    private func generateExercisesForModality(modality: Modality, numberOfMovements: Int) -> [Exercise] {
-        var exercisesForModality: [Exercise] = []
-        var movementPatterns: [MovementPattern] = []
-        for (movementPattern, count) in usedMovementsDictionary {
-            for _ in 1...count {
-                
-                movementPatterns.append(movementPattern)
-            }
-        }
-        
-        
-        var exercises: [Exercise] = []
-        for _ in 1...numberOfMovements {
-            if let exercise = getRandomExerciseForModality(modality) {
-                exercises.append(exercise)
-            }
-        }
-        return exercises
-    }
-    
-    private func getRandomExerciseForModality(modality: Modality) -> Exercise? {
-        var exercises: [Exercise] = []
-        switch modality {
-        case .Conditioning:
-            exercises = remainingCardioExercises
-        case .Gymnastics:
-            exercises = remainingGymnasticsExercises
-        case .Weightlifting:
-            exercises = remainingWeightliftingExercises
-        }
-        let exercisesCount = exercises.count
-        if exercisesCount > 0 {
-            let randomNum = Int(arc4random_uniform(UInt32(exercisesCount)))
-            let exercise = exercises[randomNum]
-            updateMovementsDictionaryForExercise(exercise)
-            return exercise
-        }
-        return nil
-    }
-    
-    private func updateMovementsDictionaryForExercise(exercise: Exercise) {
-        guard let primaryMovementPattern = exercise.primaryMovementPattern else {return}
-        updateMovementsDictionaryForMovementPatterns(primaryMovementPattern, secondaryMovement: exercise.secondaryMovementPattern)
+    func updateMovementsDictionaryForExercise(exercise: Exercise) {
+        updateMovementsDictionaryForMovementPatterns(exercise.primaryMovementPattern, secondaryMovement: exercise.secondaryMovementPattern)
     }
     
     private func updateMovementsDictionaryForMovementPatterns(primaryMovement: MovementPattern, secondaryMovement: MovementPattern?) {
